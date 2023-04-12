@@ -4,6 +4,49 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/styles.css")
         title Document
     body 
-    h1 Hello Alina
+        include components/mixine
+        header 
+            +menu(mainMenu)
+            section.flex-between 
+                .main-info 
+                    h1 social marketing & analytics
+                    p.pricing Pricing Table
+                    p.main-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    p 
+                        a(href="#scrollbox" class="cta") next
+        main 
+            section.card#scrollbox
+                .card-info.flex-between
+                    p.name misocial
+                    h2 Select a Plan
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                .tarif.flex-between
+                    +card(cardsInfo.satelite)
+                    +card(cardsInfo.mars)
+                    +card(cardsInfo.rocket)
+            section.bottom-bg.flex-between 
+                .bottom-info
+                    p social marketing & analytics
+                    h2 Take control of your data
+                    .bottom-cta
+                        p.cta
+                            a(href="#" class="cta") get started
+                        p.cta
+                            a(href="#" class="cta") explore features
+        footer 
+            +menu(mainMenu, "dark")
+            .social
+                p &#169; 2017 Mass Impressions & Tranmautritam. Make the right impression.
+                .social-svg 
+                    a(href="#" class="fb")
+                        img(src="", alt="")
+                    a(href="#" class="tw")
+                        img(src="", alt="")
+                    a(href="#" class="google")
+                        img(src="", alt="")
+                    a(href="#" class="inst")
+                        img(src="", alt="")
+        script(src="js/scripts.js")

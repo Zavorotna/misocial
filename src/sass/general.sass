@@ -1,0 +1,112 @@
+@import components/mixines
+html,
+body
+    scroll-behavior: smooth
+body
+    margin: 0
+    font-family: "Maven Pro"
+    box-sizing: border-box
+
+.flex-between 
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+
+header
+    +gradient ("../img/glass.png")
+    .navigation
+        display: flex
+        justify-content: space-between
+        .logo 
+            position: relative
+            padding: 55px 100px 0
+            display: flex
+            justify-content: flex-start
+            img 
+                position: absolute
+                top: 50px
+                left: 50px
+                width: 48px
+                height: 48px
+            p.light 
+                margin: 0
+                font-size: 30px
+                letter-spacing: 6px
+                line-height: 29px
+                text-transform: uppercase
+                color: #fff
+        .light 
+            li
+                display: inline-block
+                padding: 60px 25px 0
+                a
+                    text-decoration: none
+                    font-size: 16px
+                    line-height: 19px
+                    color: #fff
+                    &:hover 
+                        text-decoration: underline
+section
+    padding: 150px 0
+
+.main-info
+    h1 
+        margin: 0
+        font-size: 14px
+        letter-spacing: 1px
+        line-height: 1.5em
+        text-transform: uppercase
+        color: #fff
+        &::before,
+        &::after
+            content: ""
+            display: block
+            width: 25px
+            border: 1px solid #ffffff
+
+.pricing 
+    margin: 0
+    padding: 50px 0 
+    font-size: 86px
+    letter-spacing: -3px
+    color: #fff
+.main-text
+    margin: 0
+    text-align: center
+    font-size: 16px
+    line-height: 28px
+    color: #fff
+
+.card-info
+    flex-direction: column
+    p
+        max-width: 380px
+        font-size: 16px
+        line-height: 28px
+        color: #9fa4af
+        font-weight: 400
+
+.name
+    font-size: 14px
+    letter-spacing: 1px
+    line-height: 32px
+    text-transform: uppercase
+    color: #9fa4af
+h2
+    font-size: 60px
+    letter-spacing: -2px
+    line-height: 72px
+    color: #4f4f6f
+
+.card-figure
+    padding: 65px 0
+    border-radius: 30px
+    background-color: #ffffff
+    border: 1px solid #d7dbe8
+    &:hover 
+        border: 1px solid transparent
+        filter: drop-shadow(0 0 46px rgba(204,204,223,0.71))
+
+.description 
+    max-height: 650px
