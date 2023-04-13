@@ -1,13 +1,38 @@
 
     
 =btn ($fixed:true, $empty:false)
+    display: inline-block
+    text-align: center
+    font-size: 12px
+    letter-spacing: 1px
+    line-height: 2.3em
+    text-transform: uppercase
+    text-decoration: none
+    border-radius: 25px
     @if $fixed
-        width: 190rem
+        padding: 10px 0
+        width: 190px
+        filter: drop-shadow(0 0 10.5px rgba(204,204,223,0.5))
+        background-color: #ffffff
+        border: 1px solid #d7dbe8
+        transition: all 1s ease
+        &:hover
+            border: 1px solid transparent
+            color: #fff
+            background-color: #6e45e2
     @else
-        width:150rem
+        width:150px
+        background-color: rgba(110,69,226,0)
+        border: 1px solid #ffffff
 
     @if $empty != false
-        background-color: transparent
+        background-color: #6e45e2
+        transition: all 1s ease
+        &:hover
+            color: #6e45e2
+            background-color: transparent
+            border: 1px solid #6e45e2
+            
 
 =gradient($url)
     background-color: #6959d5 

@@ -14,56 +14,112 @@ body
     text-align: center
 
 header
-    +gradient ("../img/glass.png")
-    .navigation
+    +gradient("../img/glass.png")
+
+.navigation
+    margin: 0 50px 0 100px
+    padding: 55px 0
+    display: flex
+    justify-content: space-between
+    .logo 
+        position: relative
+        padding: 5px 0 0
         display: flex
-        justify-content: space-between
-        .logo 
-            position: relative
-            padding: 55px 100px 0
-            display: flex
-            justify-content: flex-start
-            img 
-                position: absolute
-                top: 50px
-                left: 50px
-                width: 48px
-                height: 48px
-            p.light 
-                margin: 0
-                font-size: 30px
-                letter-spacing: 6px
-                line-height: 29px
-                text-transform: uppercase
-                color: #fff
-        .light 
-            li
-                display: inline-block
-                padding: 60px 25px 0
-                a
-                    text-decoration: none
-                    font-size: 16px
-                    line-height: 19px
-                    color: #fff
-                    &:hover 
-                        text-decoration: underline
-section
-    padding: 150px 0
+        justify-content: flex-start
+        img 
+            position: absolute
+            top: 0
+            left: -30%
+            width: 48px
+            height: 48px
+        p.light,
+        p.dark 
+            margin: 0
+            font-size: 30px
+            letter-spacing: 6px
+            line-height: 29px
+            text-transform: uppercase
+            color: #fff
+        p.dark 
+            color: #37374a
+
+
+.flex-nav
+    display: flex
+    flex-wrap: wrap
+
+.light
+    .cta-empty
+        margin: 0
+    .btn 
+        +btn($fixed:false)
+        padding: 10px 0 
+        color: #fff
+.dark 
+    .btn 
+        +btn($fixed:false, $empty:true)
+        padding: 10px 0 
+        color: #fff
+
+.light,
+.dark
+    margin: 0
+    padding-left: 0  
+    li
+        display: inline-block
+        padding: 15px 25px 5px
+        cursor: pointer
+        &:hover
+            border-bottom: 1px solid #fff
+        a
+            text-decoration: none
+            font-size: 16px
+            line-height: 19px
+            color: #fff
+
+
+.dark
+    li 
+        &:hover
+            border-bottom: 1px solid #756edc
+        a
+            color: #756edc
+
+.cta-empty
+    margin: 0
+
+.btn 
+    +btn($fixed:false)
+    padding: 10px 0 
+    color: #fff
 
 .main-info
+    padding: 200px 0
     h1 
+        position: relative
         margin: 0
         font-size: 14px
         letter-spacing: 1px
         line-height: 1.5em
         text-transform: uppercase
         color: #fff
-        &::before,
-        &::after
+        &::before
             content: ""
+            position: absolute
+            top: 50%
+            left: 10%
             display: block
             width: 25px
             border: 1px solid #ffffff
+        &::after
+            content: ""
+            position: absolute
+            top: 50%
+            right: 10%
+            display: block
+            width: 25px
+            border: 1px solid #ffffff
+
 
 .pricing 
     margin: 0
@@ -71,42 +127,190 @@ section
     font-size: 86px
     letter-spacing: -3px
     color: #fff
+
 .main-text
-    margin: 0
+    margin: 0 auto
+    max-width: 380px
     text-align: center
     font-size: 16px
     line-height: 28px
     color: #fff
 
+.arrow
+    a
+        position: absolute
+        margin: 0
+        bottom: -25%
+        left: 47%
+        width: 65px
+        height: 65px
+        background-color: #fff
+        border-radius: 50%
+        &:before
+            content: ""
+            position: absolute
+            height: 18px
+            top: 40%
+            left: 49%
+            border: none
+            border-left: 2px solid #9fa4af
+        &::after
+            content: ""
+            position: absolute
+            top: 50%
+            left: 42%
+            width: 10px
+            height: 10px
+            border: none
+            border-left: 2px solid #9fa4af
+            border-bottom: 2px solid #9fa4af
+            transform: rotate(-45deg)
+
+
 .card-info
     flex-direction: column
+    padding: 120px 0 100px
     p
         max-width: 380px
         font-size: 16px
         line-height: 28px
         color: #9fa4af
         font-weight: 400
+    h2
+        margin: 0
+        padding: 25px 0
+        font-size: 60px
+        letter-spacing: -2px
+        line-height: 72px
+        color: #4f4f6f
 
 .name
+    margin: 0
+    position: relative
     font-size: 14px
     letter-spacing: 1px
     line-height: 32px
     text-transform: uppercase
     color: #9fa4af
-h2
-    font-size: 60px
-    letter-spacing: -2px
-    line-height: 72px
-    color: #4f4f6f
+    &::before
+        content: ""
+        position: absolute
+        top: 50%
+        left: -55%
+        width: 24px
+        border: 1px solid #6e45e2
+    &::after
+        content: ""
+        position: absolute
+        top: 50%
+        right: -55%
+        width: 24px
+        border: 1px solid #6e45e2
+
+.tarif
+    margin-left: 50px
 
 .card-figure
-    padding: 65px 0
+    margin: 0
+    margin-right: 50px
+    margin-bottom: 120px
+    padding: 65px 0 
+    max-width: 440px
+    max-height: 650px
     border-radius: 30px
     background-color: #ffffff
     border: 1px solid #d7dbe8
     &:hover 
         border: 1px solid transparent
         filter: drop-shadow(0 0 46px rgba(204,204,223,0.71))
+    a
+        margin: 54px 0 0
+        +btn()
+
+.img 
+    min-width: 120px
+    min-height: 110px
+    padding: 0 0 55px
+
+.personal
+    margin: 0
+    font-size: 14px
+    letter-spacing: 1px
+    line-height: 2,2em
+    text-transform: uppercase
+    color: #9fa4af
+
+.price 
+    position: relative
+    color: #4f4f6f
+    font-weight: 500
+    b
+        font-size: 60px
+        letter-spacing: -2px
+        line-height: 1,2em
+
+.currency
+    position: absolute
+    top: 8%
+    left: 25%
 
 .description 
-    max-height: 650px
+    margin: 0
+    padding: 0 70px
+    max-width: 296px
+    li
+        list-style: none
+        font-size: 16px
+        line-height: 1,7em
+        color: #9fa4af
+        font-weight: 400
+
+.bottom-bg
+    padding: 150px 0
+    +gradient("../img/map.png")
+
+.bottom-info
+    p
+        margin: 0
+        font-size: 14px
+        letter-spacing: 1px
+        line-height: 32px
+        text-transform: uppercase
+        color: #ffffff
+    h2
+        margin: 0
+        padding: 24px 0 18px
+        font-size: 60px
+        letter-spacing: -2px
+        line-height: 1,2em
+        color: #ffffff
+    .cta
+        margin: 0
+        +btn
+
+.bottom-cta
+    column-gap: 10px
+
+hr
+    margin: 0 50px
+    opacity: 0.4
+    border: none
+    border-top: 1px solid #bdbdc2
+
+.social 
+    justify-content: space-between
+    margin: 0 50px
+    p
+        margin: 33px 0 27px
+        opacity: 0.502
+        font-size: 14px
+        line-height: 19px
+        color: #6a6a77
+
+.social-svg
+    a
+        padding-right: 18px
+
+svg
+    opacity: 0.502
+    fill: #6a6a77

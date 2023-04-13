@@ -11,11 +11,13 @@ mixin menu(mainMenu, colorTheme="light")
         .logo 
             img(src="img/logo.png", alt="logo misocial")
             p(class=colorTheme) misocial
-        nav 
+        nav.flex-nav
             ul(class=colorTheme).menu
                 for item in mainMenu 
                     li  
                         a(href=item[1]) #{item[0]}
+            p(class=colorTheme).cta-empty
+                a(href="#" class="btn") get started
         
 - 
     let cardsInfo = {
@@ -75,15 +77,15 @@ mixin menu(mainMenu, colorTheme="light")
 mixin card(oneCard)
     figure.card-figure 
         figcaption 
-            img(src=oneCard.img, alt=oneCard.alt) 
+            img(src=oneCard.img, alt=oneCard.alt class="img") 
             p.personal #{oneCard.personal}   
             p.price 
                 span.currency #{oneCard.currensy}
-                b #{oneCard.price} / 
+                b #{oneCard.price}
                 if oneCard.isMonth 
-                    | month
+                    | /month
                 else 
-                    | year
+                    | /year
             ul.description
                 for onetext in oneCard.description 
                     li #{onetext}
