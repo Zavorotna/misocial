@@ -1,5 +1,8 @@
 @import components/mixines
-
+html
+    font-size: 1px
+    +media(2200)
+        font-size: 2px
 html,
 body
     scroll-behavior: smooth
@@ -10,7 +13,7 @@ body
     box-sizing: border-box
 
 .wrapper
-    margin: 0 15px
+    margin: 0 15rem
 
 .flex-between 
     display: flex
@@ -27,12 +30,12 @@ header
 
 .navigation-visible
     display: none
-    // +media(1024)
-    //     display: block
+    +media(1024)
+        display: block
 
 .navigation
-    margin: 0 50px 0 50px
-    padding: 55px 0
+    margin: 0 50rem 0 50rem
+    padding: 55rem 0
     display: flex
     flex-wrap: wrap
     justify-content: center        
@@ -40,26 +43,25 @@ header
         justify-content: space-between        
         flex-wrap: nowrap
     .logo 
-        margin: 0 0 15px
+        margin: 0 0 15rem
         position: relative
-        padding: 5px 0 0 50px
+        padding: 5rem 0 0 50rem
         display: flex
         justify-content: space-between
         img 
             position: absolute
-            top: -5px
-            left: -10px
-            width: 48px
-            height: 48px
+            top: -5rem
+            left: -10rem
+            width: 48rem
+            height: 48rem
         p.light,
         p.dark 
             margin: 0
-            font-size: 30px
-            letter-spacing: 6px
+            font-size: 30rem
+            letter-spacing: 6rem
             font-weight: 700
             text-transform: uppercase
             color: #fff
-
         p.dark 
             color: #37374a
 
@@ -69,7 +71,7 @@ header
     flex-wrap: wrap
     text-align: center
     justify-content: center
-    column-gap: 25px
+    column-gap: 25rem
     +media(1024)
         justify-content: space-between
         text-align: start
@@ -79,11 +81,11 @@ header
         margin: 0
     .btn 
         +btn($fixed:false)
-        padding: 8px 0 
+        padding: 8rem 0 
         color: #fff
         transition: all 1s ease
         &:hover
-            border: 1px solid transparent
+            border: 1rem solid transparent
             background-color: #b7abf7
         +media(718)
             margin: 0
@@ -91,7 +93,7 @@ header
 .dark 
     .btn 
         +btn($fixed:false, $empty:true)
-        padding: 8px 0 
+        padding: 8rem 0 
         color: #fff
         +media(718)
             margin: 0
@@ -102,105 +104,121 @@ header
     padding-left: 0  
     li
         display: block
-        padding: 15px 55px 17px
+        padding: 15rem 55rem 17rem
         cursor: pointer
         +media(425)
             display: inline-block
-            padding: 15px 15px 17px
+            padding: 15rem 15rem 17rem
         +media(1440)
-            padding: 15px 25px 17px
+            padding: 15rem 25rem 17rem
         &:hover
-            border-bottom: 1px solid #fff
+            border-bottom: 1rem solid #fff
         a
             text-decoration: none
-            font-size: 16px
-            line-height: 19px
+            font-size: 16rem
+            line-height: 19rem
             font-weight: 500
             color: #fff
 .dark
     li 
-        &:hover
-            border-bottom: 1px solid #756edc
         a
-            color: #756edc
+            color: #6a6a77
+            &:hover
+                color: #756edc
 
 .cta-empty
     margin: 0
 
 .btn 
     +btn($fixed:false)
-    padding: 10px 0 
+    padding: 10rem 0 
     color: #fff
 
-// .mobile
-//     position: fixed
-//     top: -100%
-//     left: 0
-//     width: 100%
-//     height: 100%
-//     background-color: #1f1f56
-//     transition: all 1s ease
+.mobile
+    position: fixed
+    top: -100%
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #756edc
+    transition: all 1s ease
+    z-index: 2
 
-// .mobile-flex 
-//     display: flex
-//     justify-content: center
-//     flex-direction: column
-//     align-items: center
-//     row-gap: 21rem
 
-// .mobile 
-//     li 
-//         margin: 
-//         padding: 16px
+.mobile-flex 
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    row-gap: 21rem
 
-// .activemobile 
-//     top: 55rem
+.mobile 
+    li 
+        margin: 0
+        padding: 16rem
 
-// .burger 
-//     cursor: pointer
-//     display: block
-//     padding-top: 8rem
-//     height: 30rem
-//     position: relative
-//     width: 30rem
-//     span
-//         &::before,
-//         &::after 
-//             background: #fff
-//             content: ""
-//             display: block
-//             height: 2rem
-//             position: absolute
-//             width: 100%
+.activemobile 
+    top: 0
 
-// .burger 
-//     span
-//         &::before 
-//             top: -8rem
-//         &::after 
-//             bottom: -8rem
+.burger-logo
+    margin: 0 25rem
+    justify-content: space-between
+    +media(1024)
+        display: none
 
-// .active 
-//     padding: 0
-//     padding-bottom: 8rem
+.burger 
+    position: relative
+    display: block
+    margin: 25rem
+    padding: 30rem 0
+    width: 30rem
+    height: 30rem
+    z-index: 3
+    cursor: pointer
 
-// .active 
-//     span
-//         background-color: transparent
-//         &::before 
-//             top: 11rem
-//             transform: rotate(45deg)
-//         &::after 
-//             bottom: -11rem
-//             transform: rotate(-45deg)
+.bord
+    display: block
+    background-color: #fff
+    padding: 0
+    height: 2rem
+    width: 100%
+    &::before,
+    &::after 
+        position: absolute
+        content: ""
+        background-color: #fff
+        height: 2rem
+        width: 100%
+
+.bord
+    &::before 
+        top: 40rem
+        right: 0
+    &::after 
+        right: 0
+        bottom: 38rem
+
+.active 
+    padding: 0
+    padding-bottom: 0
+
+.active 
+    .bord
+        background-color: transparent
+        &::before 
+            top: 28rem
+            transform: rotate(45deg)
+        &::after 
+            bottom: 0
+            transform: rotate(-45deg)
 
 .main-info
-    padding: 100px 0
+    padding: 100rem 0
     h1 
         position: relative
         margin: 0
-        font-size: 14px
-        letter-spacing: 1px
+        font-size: 14rem
+        letter-spacing: 1rem
         line-height: 1.5em
         font-weight: 700
         text-transform: uppercase
@@ -212,31 +230,31 @@ header
                 top: 50%
                 left: 10%
                 display: block
-                width: 25px
-                border: 1px solid #ffffff
+                width: 25rem
+                border: 1rem solid #ffffff
             &::after
                 content: ""
                 position: absolute
                 top: 50%
                 right: 10%
                 display: block
-                width: 25px
-                border: 1px solid #ffffff
+                width: 25rem
+                border: 1rem solid #ffffff
 
 .pricing 
     margin: 0
-    padding: 40px 0 22px
-    font-size: 86px
-    letter-spacing: -3px
+    padding: 40rem 0 22rem
+    font-size: 86rem
+    letter-spacing: -3rem
     font-weight: 500
     color: #fff
 
 .main-text
     margin: 0 auto
-    padding-bottom: 100px
-    max-width: 387px
+    padding-bottom: 100rem
+    max-width: 387rem
     text-align: center
-    font-size: 16px
+    font-size: 16rem
     line-height: 1.75em
     font-weight: 400
     color: #fff
@@ -247,51 +265,52 @@ header
         position: absolute
         margin: 0
         left: 40%
-        width: 65px
-        height: 65px
+        width: 65rem
+        height: 65rem
         background-color: #fff
         border-radius: 50%
+        box-shadow: 0 0 10.5rem 5rem rgba(204,204,223,0.5)
         transition: all 1s ease
         &:hover
-            box-shadow: 0 0 10.5px 10px rgba(204,204,223,0.5)
+            box-shadow: 0 0 10.5rem 10rem rgba(204,204,223,0.5)
         &:before
             content: ""
             position: absolute
-            height: 18px
-            top: 26px
-            left: 32px
+            height: 18rem
+            top: 26rem
+            left: 32rem
             border: none
-            border-left: 2px solid #9fa4af
+            border-left: 2rem solid #9fa4af
         &::after
             content: ""
             position: absolute
-            top: 32px
-            left: 27px
-            width: 10px
-            height: 10px
+            top: 32rem
+            left: 27rem
+            width: 10rem
+            height: 10rem
             border: none
-            border-left: 2px solid #9fa4af
-            border-bottom: 2px solid #9fa4af
+            border-left: 2rem solid #9fa4af
+            border-bottom: 2rem solid #9fa4af
             transform: rotate(-45deg)
 
 
 .card-info
     flex-wrap: nowrap
     flex-direction: column
-    padding: 120px 0 100px
+    padding: 120rem 0 100rem
     p
         margin: 0
-        max-width: 380px
-        font-size: 16px
+        max-width: 380rem
+        font-size: 16rem
         line-height: 1.75em
         font-weight: 400
         color: #9fa4af
         font-weight: 400
     h2
         margin: 0
-        padding: 25px 0 38px
-        font-size: 60px
-        letter-spacing: -2px
+        padding: 25rem 0 38rem
+        font-size: 60rem
+        letter-spacing: -2rem
         line-height: 1.2em
         color: #4f4f6f
         font-weight: 500
@@ -300,8 +319,8 @@ header
 .name
     margin: 0
     position: relative
-    font-size: 14px
-    letter-spacing: 1px
+    font-size: 14rem
+    letter-spacing: 1rem
     line-height: 2.28em
     font-weight: 700
     text-transform: uppercase
@@ -311,55 +330,55 @@ header
         position: absolute
         top: 50%
         left: -55%
-        width: 24px
-        border: 1px solid #6e45e2
+        width: 24rem
+        border: 1rem solid #6e45e2
     &::after
         content: ""
         position: absolute
         top: 50%
         right: -55%
-        width: 24px
-        border: 1px solid #6e45e2
+        width: 24rem
+        border: 1rem solid #6e45e2
 
 .tarif
     align-items: center
     justify-content: center
     +media(1024)
-        margin-right: 50px
+        margin-right: 50rem
 
 .card-figure
-    margin: 0 15px
-    margin-bottom: 120px
-    padding: 65px 0 
-    max-width: 300px
-    max-height: 650px
-    border-radius: 30px
+    margin: 0 15rem
+    margin-bottom: 50rem
+    padding: 65rem 0 
+    max-width: 300rem
+    max-height: 650rem
+    border-radius: 30rem
     background-color: #ffffff
-    border: 1px solid #d7dbe8
+    border: 1rem solid #d7dbe8
     +media(425)
-        margin: 0 50px
-        margin-bottom: 120px
+        margin: 0 50rem
+        margin-bottom: 50rem
     +media(1024)
         margin: 0
-        margin-left: 50px
-        margin-bottom: 120px
-        max-width: 440px
+        margin-left: 50rem
+        margin-bottom: 120rem
+        max-width: 440rem
     &:hover 
-        border: 1px solid transparent
-        filter: drop-shadow(0 0 46px rgba(204,204,223,0.71))
+        border: 1rem solid transparent
+        filter: drop-shadow(0 0 46rem rgba(204,204,223,0.71))
     a
-        margin: 54px 0 0
+        margin: 54rem 0 0
         +btn()
 
 .img 
-    min-width: 120px
-    min-height: 110px
-    padding: 0 0 55px
+    min-width: 120rem
+    min-height: 110rem
+    padding: 0 0 55rem
 
 .personal
     margin: 0
-    font-size: 14px
-    letter-spacing: 1px
+    font-size: 14rem
+    letter-spacing: 1rem
     line-height: 2.28em
     font-weight: 700
     text-transform: uppercase
@@ -371,84 +390,91 @@ header
     color: #4f4f6f
     font-weight: 500
     span
-        font-size: 16px
-        letter-spacing: -1px
+        font-size: 16rem
+        letter-spacing: -1rem
         line-height: 3.18em
         font-weight: 500
     b
-        font-size: 60px
-        letter-spacing: -2px
+        font-size: 60rem
+        letter-spacing: -2rem
         line-height: 1,2em
+        font-weight: 500
 
 .currency
     position: absolute
-    top: -5px
-    left: -10px
+    top: -5rem
+    left: -10rem
 
 .description 
     margin: 0
-    padding: 0 70px
-    max-width: 296px
+    padding: 0 30rem
+    max-width: 296rem
+    +media(768)
+        padding: 0 50rem
     li
         list-style: none
-        font-size: 16px
+        font-size: 16rem
         line-height: 1,7em
         color: #9fa4af
         font-weight: 400
 
 .bottom-bg
-    padding: 150px 0
+    padding: 150rem 0
     +gradient("../img/map.png")
 
 .bottom-info
     p
         margin: 0
-        font-size: 14px
-        letter-spacing: 1px
+        font-size: 14rem
+        letter-spacing: 1rem
         line-height: 2.28em
         text-transform: uppercase
         color: #ffffff
         font-weight: 700
     h2
         margin: 0
-        padding: 24px 0 18px
-        font-size: 60px
-        letter-spacing: -2px
+        padding: 24rem 0 18rem
+        font-size: 60rem
+        letter-spacing: -2rem
         line-height: 1.2em
         font-weight: 500
         color: #ffffff
     .cta
-        margin: 0 0 10px       
+        margin: 0 0 10rem       
         +btn
 
 .bottom-cta
-    column-gap: 10px
+    column-gap: 10rem
 
 hr
-    margin: 0 50px
+    margin: 0 25rem
     opacity: 0.4
     border: none
-    border-top: 1px solid #bdbdc2
+    border-top: 1rem solid #bdbdc2
+    +media(1024)
+        margin: 0 50rem
 
 .social 
+    flex-wrap: wrap-reverse
     justify-content: center
-    margin: 0 50px
-    column-gap: 25px
+    margin: 0 20rem
+    column-gap: 25rem
     +media(1024)
+        margin: 0 50rem
         justify-content: space-between
     p
-        margin: 33px 0 27px
+        margin: 33rem 0 27rem
         opacity: 0.502
-        font-size: 14px
-        line-height: 19px
+        font-size: 14rem
+        line-height: 19rem
         color: #6a6a77
 
 .social-svg
-    margin-bottom: 25px
+    margin: 25rem
     +media(682)
         margin-bottom: 0
     a
-        padding-right: 18px
+        padding-right: 18rem
     .inst 
         padding-right: 0
         

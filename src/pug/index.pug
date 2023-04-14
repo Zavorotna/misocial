@@ -18,8 +18,11 @@ html(lang="en")
         header 
             .navigation-visible
                 +menu(mainMenu)
-            .burger#burger
-                span
+                .logo 
+            .burger-logo.flex-between
+                img(src="img/logo.png", alt="logo misocial")
+                .burger#burger
+                    span.bord
             .mobile-menu.mobile#mobile 
                 +menu(mainMenu)
             section.flex-between 
