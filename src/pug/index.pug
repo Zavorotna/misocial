@@ -12,11 +12,16 @@ html(lang="en")
         meta(name="msapplication-TileColor" content="#ffffff")
         meta(name="msapplication-TileImage" content="img/ms-icon-144x144.png")
         meta(name="theme-color" content="#ffffff")
-        title Document
+        title moisocial - social marketing & analytics
     body 
         include components/mixine
         header 
-            +menu(mainMenu)
+            .navigation-visible
+                +menu(mainMenu)
+            .burger#burger
+                span
+            .mobile-menu.mobile#mobile 
+                +menu(mainMenu)
             section.flex-between 
                 .main-info.wrapper
                     h1 social marketing & analytics

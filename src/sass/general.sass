@@ -1,4 +1,5 @@
 @import components/mixines
+
 html,
 body
     scroll-behavior: smooth
@@ -23,6 +24,11 @@ body
 header
     width: 100%
     +gradient("../img/glass.png")
+
+.navigation-visible
+    display: none
+    // +media(1024)
+    //     display: block
 
 .navigation
     margin: 0 50px 0 50px
@@ -50,18 +56,20 @@ header
             margin: 0
             font-size: 30px
             letter-spacing: 6px
-            line-height: 29px
+            font-weight: 700
             text-transform: uppercase
             color: #fff
 
         p.dark 
             color: #37374a
+
 .flex-nav
     margin: 0
     display: flex
     flex-wrap: wrap
     text-align: center
     justify-content: center
+    column-gap: 25px
     +media(1024)
         justify-content: space-between
         text-align: start
@@ -94,19 +102,20 @@ header
     padding-left: 0  
     li
         display: block
-        padding: 15px 55px 5px
+        padding: 15px 55px 17px
         cursor: pointer
         +media(425)
             display: inline-block
-            padding: 15px 15px 5px
+            padding: 15px 15px 17px
         +media(1440)
-            padding: 15px 25px 5px
+            padding: 15px 25px 17px
         &:hover
             border-bottom: 1px solid #fff
         a
             text-decoration: none
             font-size: 16px
             line-height: 19px
+            font-weight: 500
             color: #fff
 .dark
     li 
@@ -123,6 +132,68 @@ header
     padding: 10px 0 
     color: #fff
 
+// .mobile
+//     position: fixed
+//     top: -100%
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     background-color: #1f1f56
+//     transition: all 1s ease
+
+// .mobile-flex 
+//     display: flex
+//     justify-content: center
+//     flex-direction: column
+//     align-items: center
+//     row-gap: 21rem
+
+// .mobile 
+//     li 
+//         margin: 
+//         padding: 16px
+
+// .activemobile 
+//     top: 55rem
+
+// .burger 
+//     cursor: pointer
+//     display: block
+//     padding-top: 8rem
+//     height: 30rem
+//     position: relative
+//     width: 30rem
+//     span
+//         &::before,
+//         &::after 
+//             background: #fff
+//             content: ""
+//             display: block
+//             height: 2rem
+//             position: absolute
+//             width: 100%
+
+// .burger 
+//     span
+//         &::before 
+//             top: -8rem
+//         &::after 
+//             bottom: -8rem
+
+// .active 
+//     padding: 0
+//     padding-bottom: 8rem
+
+// .active 
+//     span
+//         background-color: transparent
+//         &::before 
+//             top: 11rem
+//             transform: rotate(45deg)
+//         &::after 
+//             bottom: -11rem
+//             transform: rotate(-45deg)
+
 .main-info
     padding: 100px 0
     h1 
@@ -131,6 +202,7 @@ header
         font-size: 14px
         letter-spacing: 1px
         line-height: 1.5em
+        font-weight: 700
         text-transform: uppercase
         color: #fff
         +media(425)
@@ -151,21 +223,22 @@ header
                 width: 25px
                 border: 1px solid #ffffff
 
-
 .pricing 
     margin: 0
-    padding: 50px 0 
+    padding: 40px 0 22px
     font-size: 86px
     letter-spacing: -3px
+    font-weight: 500
     color: #fff
 
 .main-text
     margin: 0 auto
     padding-bottom: 100px
-    max-width: 380px
+    max-width: 387px
     text-align: center
     font-size: 16px
-    line-height: 28px
+    line-height: 1.75em
+    font-weight: 400
     color: #fff
 
 .arrow
@@ -178,6 +251,9 @@ header
         height: 65px
         background-color: #fff
         border-radius: 50%
+        transition: all 1s ease
+        &:hover
+            box-shadow: 0 0 10.5px 10px rgba(204,204,223,0.5)
         &:before
             content: ""
             position: absolute
@@ -189,8 +265,8 @@ header
         &::after
             content: ""
             position: absolute
-            top: 50%
-            left: 42%
+            top: 32px
+            left: 27px
             width: 10px
             height: 10px
             border: none
@@ -204,17 +280,21 @@ header
     flex-direction: column
     padding: 120px 0 100px
     p
+        margin: 0
         max-width: 380px
         font-size: 16px
-        line-height: 28px
+        line-height: 1.75em
+        font-weight: 400
         color: #9fa4af
         font-weight: 400
     h2
         margin: 0
-        padding: 25px 0
+        padding: 25px 0 38px
         font-size: 60px
         letter-spacing: -2px
-        line-height: 72px
+        line-height: 1.2em
+        color: #4f4f6f
+        font-weight: 500
         color: #4f4f6f
 
 .name
@@ -222,7 +302,8 @@ header
     position: relative
     font-size: 14px
     letter-spacing: 1px
-    line-height: 32px
+    line-height: 2.28em
+    font-weight: 700
     text-transform: uppercase
     color: #9fa4af
     &::before
@@ -279,14 +360,21 @@ header
     margin: 0
     font-size: 14px
     letter-spacing: 1px
-    line-height: 2,2em
+    line-height: 2.28em
+    font-weight: 700
     text-transform: uppercase
     color: #9fa4af
 
 .price 
     position: relative
+    display: inline-block
     color: #4f4f6f
     font-weight: 500
+    span
+        font-size: 16px
+        letter-spacing: -1px
+        line-height: 3.18em
+        font-weight: 500
     b
         font-size: 60px
         letter-spacing: -2px
@@ -295,7 +383,7 @@ header
 .currency
     position: absolute
     top: 8%
-    left: 25%
+    left: -10%
 
 .description 
     margin: 0
@@ -317,18 +405,20 @@ header
         margin: 0
         font-size: 14px
         letter-spacing: 1px
-        line-height: 32px
+        line-height: 2.28em
         text-transform: uppercase
         color: #ffffff
+        font-weight: 700
     h2
         margin: 0
         padding: 24px 0 18px
         font-size: 60px
         letter-spacing: -2px
-        line-height: 1,2em
+        line-height: 1.2em
+        font-weight: 500
         color: #ffffff
     .cta
-        margin: 0 0 10px
+        margin: 0 0 10px            
         +btn
 
 .bottom-cta
@@ -366,3 +456,5 @@ hr
 svg
     opacity: 0.502
     fill: #6a6a77
+    &:hover
+        fill: #10105c

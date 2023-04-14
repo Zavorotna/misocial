@@ -1,0 +1,1 @@
+const burger=document.querySelector(".burger"),mobileMenu=document.querySelector(".mobile-menu");burger.addEventListener("click",(function(){this.classList.toggle("active"),mobileMenu.classList.toggle("activemobile")}));

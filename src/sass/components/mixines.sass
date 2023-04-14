@@ -5,8 +5,10 @@
     text-align: center
     font-size: 12px
     letter-spacing: 1px
-    line-height: 2.3em
+    line-height: 2.66em 
     text-transform: uppercase
+    color: #c2c9db
+    font-weight: 700
     text-decoration: none
     border-radius: 25px
     @if $fixed
@@ -37,7 +39,7 @@
 
 =gradient($url)
     background-color: #6959d5 
-    background: linear-gradient(-60deg, rgba(135, 211, 205, 0.7) 0%, rgba(109, 69, 225, 0.7) 100%), url(#{$url}) center/cover
+    background: linear-gradient(-60deg, rgba(135, 211, 205, 0.85) 20%, rgba(109, 69, 225, 0.85) 80%), url(#{$url}) center/cover
 
 =media($size)
     @media screen and (min-width: #{$size}px)
