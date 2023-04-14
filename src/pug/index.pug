@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="viewport" content="width=device-width, uset-scalabel=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
         title Document
     body 
@@ -11,7 +11,7 @@ html(lang="en")
         header 
             +menu(mainMenu)
             section.flex-between 
-                .main-info 
+                .main-info.wrapper
                     h1 social marketing & analytics
                     p.pricing Pricing Table
                     p.main-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
@@ -19,7 +19,7 @@ html(lang="en")
                         a(href="#scrollbox" class="cta")
         main 
             section.card#scrollbox
-                .card-info.flex-between
+                .card-info.flex-between.wrapper
                     p.name misocial
                     h2 Select a Plan
                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
@@ -28,7 +28,7 @@ html(lang="en")
                     +card(cardsInfo.mars)
                     +card(cardsInfo.rocket)
             section.bottom-bg.flex-between 
-                .bottom-info
+                .bottom-info.wrapper
                     p social marketing & analytics
                     h2.botoom-head Take control of your data
                     .bottom-cta.flex-between

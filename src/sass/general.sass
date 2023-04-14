@@ -2,34 +2,47 @@
 html,
 body
     scroll-behavior: smooth
+
 body
     margin: 0
     font-family: "Maven Pro"
     box-sizing: border-box
+
+.wrapper
+    margin: 0 15px
 
 .flex-between 
     display: flex
     align-items: center
     justify-content: center
     text-align: center
+    flex-wrap: wrap
+    +media(1024)
+        flex-wrap: nowrap
 
 header
+    width: 100%
     +gradient("../img/glass.png")
 
 .navigation
-    margin: 0 50px 0 100px
+    margin: 0 50px 0 50px
     padding: 55px 0
     display: flex
-    justify-content: space-between
+    flex-wrap: wrap
+    justify-content: center        
+    +media(1024)
+        justify-content: space-between        
+        flex-wrap: nowrap
     .logo 
+        margin: 0 0 15px
         position: relative
-        padding: 5px 0 0
+        padding: 5px 0 0 50px
         display: flex
-        justify-content: flex-start
+        justify-content: space-between
         img 
             position: absolute
             top: 0
-            left: -30%
+            left: 0
             width: 48px
             height: 48px
         p.light,
@@ -40,13 +53,18 @@ header
             line-height: 29px
             text-transform: uppercase
             color: #fff
+
         p.dark 
             color: #37374a
-
-
 .flex-nav
+    margin: 0
     display: flex
     flex-wrap: wrap
+    text-align: center
+    justify-content: center
+    +media(1024)
+        justify-content: space-between
+        text-align: start
 
 .light
     .cta-empty
@@ -55,6 +73,13 @@ header
         +btn($fixed:false)
         padding: 10px 0 
         color: #fff
+        transition: all 1s ease
+        &:hover
+            border: 1px solid transparent
+            background-color: #b7abf7
+        +media(718)
+            margin: 0
+
 .dark 
     .btn 
         +btn($fixed:false, $empty:true)
@@ -66,9 +91,14 @@ header
     margin: 0
     padding-left: 0  
     li
-        display: inline-block
-        padding: 15px 25px 5px
+        display: block
+        padding: 15px 55px 5px
         cursor: pointer
+        +media(425)
+            display: inline-block
+            padding: 15px 15px 5px
+        +media(1440)
+            padding: 15px 25px 5px
         &:hover
             border-bottom: 1px solid #fff
         a
@@ -76,8 +106,6 @@ header
             font-size: 16px
             line-height: 19px
             color: #fff
-
-
 .dark
     li 
         &:hover
@@ -94,7 +122,7 @@ header
     color: #fff
 
 .main-info
-    padding: 200px 0
+    padding: 100px 0
     h1 
         position: relative
         margin: 0
@@ -103,22 +131,23 @@ header
         line-height: 1.5em
         text-transform: uppercase
         color: #fff
-        &::before
-            content: ""
-            position: absolute
-            top: 50%
-            left: 10%
-            display: block
-            width: 25px
-            border: 1px solid #ffffff
-        &::after
-            content: ""
-            position: absolute
-            top: 50%
-            right: 10%
-            display: block
-            width: 25px
-            border: 1px solid #ffffff
+        +media(425)
+            &::before
+                content: ""
+                position: absolute
+                top: 50%
+                left: 10%
+                display: block
+                width: 25px
+                border: 1px solid #ffffff
+            &::after
+                content: ""
+                position: absolute
+                top: 50%
+                right: 10%
+                display: block
+                width: 25px
+                border: 1px solid #ffffff
 
 
 .pricing 
@@ -130,6 +159,7 @@ header
 
 .main-text
     margin: 0 auto
+    padding-bottom: 100px
     max-width: 380px
     text-align: center
     font-size: 16px
@@ -137,11 +167,11 @@ header
     color: #fff
 
 .arrow
+    position: relative
     a
         position: absolute
         margin: 0
-        bottom: -25%
-        left: 47%
+        left: 40%
         width: 65px
         height: 65px
         background-color: #fff
@@ -168,6 +198,7 @@ header
 
 
 .card-info
+    flex-wrap: nowrap
     flex-direction: column
     padding: 120px 0 100px
     p
@@ -208,18 +239,28 @@ header
         border: 1px solid #6e45e2
 
 .tarif
-    margin-left: 50px
+    align-items: center
+    justify-content: center
+    +media(1024)
+        margin-right: 50px
 
 .card-figure
-    margin: 0
-    margin-right: 50px
+    margin: 0 15px
     margin-bottom: 120px
     padding: 65px 0 
-    max-width: 440px
+    max-width: 300px
     max-height: 650px
     border-radius: 30px
     background-color: #ffffff
     border: 1px solid #d7dbe8
+    +media(425)
+        margin: 0 50px
+        margin-bottom: 120px
+    +media(1024)
+        margin: 0
+        margin-left: 50px
+        margin-bottom: 120px
+        max-width: 440px
     &:hover 
         border: 1px solid transparent
         filter: drop-shadow(0 0 46px rgba(204,204,223,0.71))
@@ -285,7 +326,7 @@ header
         line-height: 1,2em
         color: #ffffff
     .cta
-        margin: 0
+        margin: 0 0 10px
         +btn
 
 .bottom-cta
@@ -298,8 +339,11 @@ hr
     border-top: 1px solid #bdbdc2
 
 .social 
-    justify-content: space-between
+    justify-content: center
     margin: 0 50px
+    column-gap: 25px
+    +media(1024)
+        justify-content: space-between
     p
         margin: 33px 0 27px
         opacity: 0.502
@@ -308,8 +352,14 @@ hr
         color: #6a6a77
 
 .social-svg
+    margin-bottom: 25px
+    +media(682)
+        margin-bottom: 0
     a
         padding-right: 18px
+    .inst 
+        padding-right: 0
+        
 
 svg
     opacity: 0.502
