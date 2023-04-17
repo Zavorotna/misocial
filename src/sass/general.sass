@@ -143,12 +143,18 @@ header
     padding: 10rem 0 
     color: #fff
 
+.burger-logo-head
+    justify-content: space-between
+    width: 100%
+
+.logo 
+    margin: 30rem 25rem
+    +media(1024)
+        display: none
+
 .burger-logo
     position: fixed
-    margin: 0 auto
-    padding: 0 25px
-    width: 100%
-    justify-content: space-between
+    right: 0
     z-index: 3
     +media(1024)
         display: none
@@ -178,7 +184,7 @@ header
 .burger 
     position: relative
     display: block
-    margin: 0 55rem
+    margin: 0 25rem
     padding: 30rem 0
     width: 30rem
     height: 30rem
@@ -201,14 +207,6 @@ header
         width: 100%
         box-shadow: 0 0 5rem 2rem #b5b2e0
 
-.darkburger 
-    .burger
-        .bord
-            background-color: #ccc
-            &::before,
-            &::after
-                background-color: #ccc
-
 .bord
     &::before 
         top: 40rem
@@ -217,14 +215,14 @@ header
         right: 0
         bottom: 38rem
 
-.active,
-.activedark
+.active
     padding: 0
     padding-bottom: 0
 
 .active
     .bord
         background-color: transparent
+        box-shadow: 0 0 0 0
         &::before 
             top: 28rem
             transform: rotate(45deg)
@@ -322,7 +320,6 @@ header
             border-left: 2rem solid #9fa4af
             border-bottom: 2rem solid #9fa4af
             transform: rotate(-45deg)
-
 
 .card-info
     flex-wrap: nowrap
