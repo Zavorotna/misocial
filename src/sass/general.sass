@@ -111,23 +111,39 @@ header
     align-items: center
     justify-content: center
     +media(1024)
-        display: block
+        flex-direction: row
+        justify-content: space-between
     li
-        padding: 15rem 55rem 17rem
-        cursor: pointer
-        +media(425)
-            display: inline-block
-            padding: 15rem 15rem 17rem
-        +media(1440)
-            padding: 15rem 25rem 17rem
-        &:hover
-            border-bottom: 1rem solid #fff
+        cursor: pointer      
         a
+            position: relative
+            display: inline-block
+            padding: 15rem 55rem 17rem
             text-decoration: none
             font-size: 16rem
             line-height: 19rem
             font-weight: 500
             color: #fff
+            &::after 
+                content: ""
+                position: absolute
+                left: 0
+                display: inline-block
+                height: 1em
+                width: 100%
+                border-bottom: 1px solid #fff
+                margin-top: 10px
+                opacity: 0
+                transition: opacity 0.35s, transform 0.35s
+                transform: scale(0,1)
+            &:hover::after 
+                opacity: 1
+                transform: scale(1)
+            +media(425)
+                padding: 15rem 15rem 17rem
+            +media(1440)
+                padding: 15rem 25rem 17rem
+                
 .dark
     li 
         a
